@@ -3,6 +3,8 @@ package dev.potatoo.jpah2.controller;
 import dev.potatoo.jpah2.entity.Users;
 import dev.potatoo.jpah2.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,13 +19,14 @@ public class UserController {
     private final UserService userService;
 
     @RequestMapping("/getUsers")
-    public List<Users> getUsers(@RequestParam(required = false, defaultValue = "") String name){
-        return userService.getUsersService(name);
+    public ResponseEntity<List<Users>> getUsers(@RequestParam(required = false, defaultValue = "") String name){
+
+        return new ResponseEntity<>(userService.getUsersService(name), HttpStatus.OK);
     }
 
     @PostMapping("/createUser")
-    public String createUser(Users users){
-        return userService.createUserService(users);
+    public ResponseEntity<String> createUser(Users users){
+        return new ResponseEntity<>(userService.createUserService(users), HttpStatus.OK);
     }
 
 }
