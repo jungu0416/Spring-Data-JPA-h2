@@ -1,6 +1,6 @@
 # Spring-JPA-h2
 
-axios 사용
+index page buttons-> axios 사용
 
 jpa
 
