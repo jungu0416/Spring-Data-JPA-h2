@@ -2,9 +2,9 @@
 
 index page buttons-> axios 사용
 
-jpa
+jpa+h2
 
-h2
+네이티브 SQL
 
 JPQL
 
