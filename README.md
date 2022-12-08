@@ -1,11 +1,13 @@
 # Spring-JPA-h2
 
-index page buttons-> axios 사용
-
 jpa+h2
 
-네이티브 SQL
+index page buttons-> axios 사용
 
-JPQL
+1. 패키지 구조 (도메인?)
 
-Querydsl
+2. 네이티브 SQL
+
+3. JPQL
+
+4. Querydsl
