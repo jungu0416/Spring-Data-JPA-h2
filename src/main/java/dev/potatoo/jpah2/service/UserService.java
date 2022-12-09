@@ -3,6 +3,7 @@ package dev.potatoo.jpah2.service;
 import dev.potatoo.jpah2.domain.Users;
 import dev.potatoo.jpah2.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,6 +22,19 @@ public class UserService {
     public String createUserService(Users users){
         userRepository.save(users);
         return "Success !!!";
+    }
+
+    public List<Users> nativeQueryFindUsers(){
+        return userRepository.nativeQueryFindUsers();
+    }
+
+    public List<Users> createNativeQuery(){
+        String sql = "select * from USERS";
+
+        Query nativeQuery = em.createNativeQuery(sql);
+        List<Users> resultList = nativeQuery.getResultList();
+
+        return
     }
 
 }

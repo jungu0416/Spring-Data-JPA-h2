@@ -20,7 +20,6 @@ public class UserController {
 
     @RequestMapping("/getUsers")
     public ResponseEntity<List<Users>> getUsers(@RequestParam(required = false, defaultValue = "") String name){
-
         return new ResponseEntity<>(userService.getUsersService(name), HttpStatus.OK);
     }
 
@@ -29,10 +28,13 @@ public class UserController {
         return new ResponseEntity<>(userService.createUserService(users), HttpStatus.OK);
     }
 
-    //@PostMapping(/nativeQuery)
+    @PostMapping("/nativeQuery")
+    public ResponseEntity<List<Users>> nativeQueryFindUsers(){
+        return new ResponseEntity<>(userService.nativeQueryFindUsers(),HttpStatus.OK);
+    }
 
 
     //@PostMapping(/JPQL)
 
-    //@PostMapping(/postgresql)
+    //@PostMapping(/querydsl)
 }

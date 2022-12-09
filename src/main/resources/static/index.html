@@ -15,8 +15,8 @@
         document.getElementById("JPQL").addEventListener("click", () => {
             axiosPost('/JPQL');
         });
-        document.getElementById("postgresql").addEventListener("click", () => {
-            axiosPost('/postgresql');
+        document.getElementById("querydsl").addEventListener("click", () => {
+            axiosPost('/querydsl');
         });
     });
 
@@ -26,10 +26,10 @@
             //data
         })
         .then(function (response) {
-            //response.data
-            //response.status
+            debugger;
+            alert(JSON.stringify(response.data));
         }).catch(function (error) {
-            alert('오류발생! ' + error);
+            alert('오류 --> ' + error);
         })
     }
 
@@ -42,7 +42,7 @@
     <button id="JPQL">
         JPQL
     </button>
-    <button id="postgresql">
+    <button id="querydsl">
         postgresql
     </button>
 </body>
