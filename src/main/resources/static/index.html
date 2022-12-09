@@ -9,30 +9,28 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        document.getElementById("nativeQuery").addEventListener("click", nativeQuery);
-        document.getElementById("JPQL").addEventListener("click", JPQL);
-        document.getElementById("postgresql").addEventListener("click", postgresql);
+        document.getElementById("nativeQuery").addEventListener("click", () => {
+            axiosPost('/nativeQuery');
+        });
+        document.getElementById("JPQL").addEventListener("click", () => {
+            axiosPost('/JPQL');
+        });
+        document.getElementById("postgresql").addEventListener("click", () => {
+            axiosPost('/postgresql');
+        });
     });
 
-    const nativeQuery = () => {
-        axios.post("/getUsers", {
-            //firstName: 'Fred',
-            //lastName: 'Flintstone'
+
+    const axiosPost = (url) => {
+        axios.post(url , {
+            //data
         })
-            .then(function (response) {
-                //response.data
-                //response.status
-            }).catch(function (error) {
-                alert('오류발생! ' + error);
+        .then(function (response) {
+            //response.data
+            //response.status
+        }).catch(function (error) {
+            alert('오류발생! ' + error);
         })
-    }
-
-    const JPQL = () => {
-
-    };
-
-    const postgresql = () => {
-
     }
 
 </script>
@@ -47,6 +45,5 @@
     <button id="postgresql">
         postgresql
     </button>
-
 </body>
 </html>

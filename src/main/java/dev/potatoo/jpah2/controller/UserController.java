@@ -29,4 +29,10 @@ public class UserController {
         return new ResponseEntity<>(userService.createUserService(users), HttpStatus.OK);
     }
 
+    //@PostMapping(/nativeQuery)
+
+
+    //@PostMapping(/JPQL)
+
+    //@PostMapping(/postgresql)
 }
