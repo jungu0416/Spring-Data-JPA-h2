@@ -1,6 +1,6 @@
 package dev.potatoo.jpah2.controller;
 
-import dev.potatoo.jpah2.entity.Users;
+import dev.potatoo.jpah2.domain.Users;
 import dev.potatoo.jpah2.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

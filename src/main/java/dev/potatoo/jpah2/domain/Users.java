@@ -1,4 +1,4 @@
-package dev.potatoo.jpah2.entity;
+package dev.potatoo.jpah2.domain;
 
 import lombok.Getter;
 import lombok.Setter;

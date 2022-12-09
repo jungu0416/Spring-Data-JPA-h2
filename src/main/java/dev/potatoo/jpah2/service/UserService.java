@@ -1,6 +1,6 @@
 package dev.potatoo.jpah2.service;
 
-import dev.potatoo.jpah2.entity.Users;
+import dev.potatoo.jpah2.domain.Users;
 import dev.potatoo.jpah2.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
