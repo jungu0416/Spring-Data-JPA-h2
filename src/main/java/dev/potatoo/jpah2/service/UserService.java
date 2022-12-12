@@ -28,13 +28,9 @@ public class UserService {
         return userRepository.nativeQueryFindUsers();
     }
 
-    public List<Users> createNativeQuery(){
-        String sql = "select * from USERS";
-
-        Query nativeQuery = em.createNativeQuery(sql);
-        List<Users> resultList = nativeQuery.getResultList();
-
-        return
+    public List<Users> jpqlQueryFindUsers() {
+        return userRepository.jpqlQueryFindUsers();
     }
+
 
 }

@@ -9,6 +9,9 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("JPA").addEventListener("click", () => {
+            axiosPost('/getUsers');
+        });
         document.getElementById("nativeQuery").addEventListener("click", () => {
             axiosPost('/nativeQuery');
         });
@@ -26,7 +29,6 @@
             //data
         })
         .then(function (response) {
-            debugger;
             alert(JSON.stringify(response.data));
         }).catch(function (error) {
             alert('오류 --> ' + error);
@@ -36,6 +38,9 @@
 </script>
 
 <body>
+    <button id="JPA">
+        JPA
+    </button>
     <button id="nativeQuery">
         nativeQuery
     </button>

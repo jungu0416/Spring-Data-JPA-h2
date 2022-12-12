@@ -15,12 +15,9 @@ public interface UserRepository extends JpaRepository<Users, Long> {
     @Query(value="select * from Users", nativeQuery = true) // nativeQuery = false 하면 JPQL
     List<Users> nativeQueryFindUsers();
 
-    Query createNativeQuery(String sqlString);
-
-
     //JPQL을 이용
-
-
+    @Query(value="select u from Users u", nativeQuery = false) // JPQL 쿼리 사용
+    List<Users> jpqlQueryFindUsers();
 
     //querydsl 이용
 }

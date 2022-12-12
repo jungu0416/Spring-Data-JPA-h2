@@ -18,23 +18,30 @@ public class UserController {
 
     private final UserService userService;
 
-    @RequestMapping("/getUsers")
-    public ResponseEntity<List<Users>> getUsers(@RequestParam(required = false, defaultValue = "") String name){
-        return new ResponseEntity<>(userService.getUsersService(name), HttpStatus.OK);
-    }
+
 
     @PostMapping("/createUser")
     public ResponseEntity<String> createUser(Users users){
         return new ResponseEntity<>(userService.createUserService(users), HttpStatus.OK);
     }
 
-    @PostMapping("/nativeQuery")
+    @RequestMapping("/getUsers") //JPA
+    public ResponseEntity<List<Users>> getUsers(@RequestParam(required = false, defaultValue = "") String name){
+        return new ResponseEntity<>(userService.getUsersService(name), HttpStatus.OK);
+    }
+
+    @PostMapping("/nativeQuery") //nativeQuery 사용
     public ResponseEntity<List<Users>> nativeQueryFindUsers(){
         return new ResponseEntity<>(userService.nativeQueryFindUsers(),HttpStatus.OK);
     }
 
+    @PostMapping("/JPQL") // JPQL 사용
+    public ResponseEntity<List<Users>> jpqlQueryFindUsers(){
+        return new ResponseEntity<>(userService.jpqlQueryFindUsers(),HttpStatus.OK);
+    }
 
-    //@PostMapping(/JPQL)
+    //@PostMapping("/querydsl") // querydsl 사용
 
-    //@PostMapping(/querydsl)
+
+
 }
