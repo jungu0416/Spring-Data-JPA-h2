@@ -1,6 +1,7 @@
 package dev.potatoo.jpah2.controller;
 
 import dev.potatoo.jpah2.domain.Users;
+import dev.potatoo.jpah2.repository.UserRepositoryCustom;
 import dev.potatoo.jpah2.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -17,8 +18,7 @@ import java.util.List;
 public class UserController {
 
     private final UserService userService;
-
-
+    private final UserRepositoryCustom UserRepositoryCustom;
 
     @PostMapping("/createUser")
     public ResponseEntity<String> createUser(Users users){
@@ -40,7 +40,11 @@ public class UserController {
         return new ResponseEntity<>(userService.jpqlQueryFindUsers(),HttpStatus.OK);
     }
 
-    //@PostMapping("/querydsl") // querydsl 사용
+    @PostMapping("/querydsl") // querydsl 사용
+    public ResponseEntity<List<Users>> queryDslFindAll(){
+        return new ResponseEntity<>(UserRepositoryCustom.queryDslFindUsers(),HttpStatus.OK);
+
+    }
 
 
 

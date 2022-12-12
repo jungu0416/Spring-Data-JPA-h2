@@ -1,5 +1,7 @@
 package dev.potatoo.jpah2.service;
 
+import com.querydsl.jpa.impl.JPAQueryFactory;
+import dev.potatoo.jpah2.domain.QUsers;
 import dev.potatoo.jpah2.domain.Users;
 import dev.potatoo.jpah2.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -13,6 +15,7 @@ import java.util.List;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final JPAQueryFactory queryFactory;
 
     public List<Users> getUsersService(String name){
         if(name.isEmpty()) return userRepository.findAll();
