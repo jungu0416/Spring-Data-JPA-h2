@@ -14,9 +14,10 @@ import java.util.List;
  */
 @Repository
 @RequiredArgsConstructor
-public class UserRepositoryImpl implements UserRepositoryCustom{
+public class UserRepositoryCustomImpl implements UserRepositoryCustom{
     private final JPAQueryFactory queryFactory;
 
+    @Override
     public List<Users> queryDslFindUsers(){
         QUsers qUsers = QUsers.users;
 

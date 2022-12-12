@@ -18,7 +18,6 @@ import java.util.List;
 public class UserController {
 
     private final UserService userService;
-    private final UserRepositoryCustom UserRepositoryCustom;
 
     @PostMapping("/createUser")
     public ResponseEntity<String> createUser(Users users){
@@ -42,10 +41,7 @@ public class UserController {
 
     @PostMapping("/querydsl") // querydsl 사용
     public ResponseEntity<List<Users>> queryDslFindAll(){
-        return new ResponseEntity<>(UserRepositoryCustom.queryDslFindUsers(),HttpStatus.OK);
-
+        return new ResponseEntity<>(userService.queryDslFindUsers(),HttpStatus.OK);
     }
-
-
 
 }
