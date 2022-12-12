@@ -1,15 +1,14 @@
 # Spring-JPA-h2
 
-jpa+h2
+## Purpose
+* Spring Data JPA 를 사용하여 DB 통신
 
-spring boot dev tools 의존성 
-
-index page buttons-> axios 사용
-
-1. 패키지 구조 (도메인?)
-
-2. 네이티브 SQL
-
-3. JPQL
-
-4. Querydsl
+## About
+* DB는 H2 사용
+* gradle 의존성에 dev-tools 추가하여 서버 리로드 설정
+* page button 을 axios 사용 (cdn 추가)
+* jpa
+  * nativeQuery
+  * JPQL
+  * queryDsl
+* domain 패키지 구조
