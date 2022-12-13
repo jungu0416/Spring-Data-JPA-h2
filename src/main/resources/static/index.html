@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="kr">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JPA</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="./css/style.css">
+
 </head>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
@@ -23,32 +29,52 @@
         });
     });
 
-
     const axiosPost = (url) => {
         axios.post(url , {
             //data
         })
-        .then(function (response) {
-            alert(JSON.stringify(response.data));
-        }).catch(function (error) {
+            .then(function (response) {
+                alert(JSON.stringify(response.data));
+            }).catch(function (error) {
             alert('오류 --> ' + error);
         })
     }
 
 </script>
+<body class="img js-fullheight" style="background-image: url(images/bg.jpg);">
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center mb-5">
+                <h2 class="heading-section">JPA 테스트</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="login-wrap p-0">
+                    <div class="form-group">
+                        <button class="form-control btn btn-primary submit px-3" id="JPA">JPA</button>
+                    </div>
+                    <div class="form-group">
+                        <button class="form-control btn btn-primary submit px-3" id="nativeQuery" style="text-transform: none;">nativeQuery</button>
+                    </div>
+                    <div class="form-group">
+                        <button class="form-control btn btn-primary submit px-3" id="JPQL" >JPQL</button>
+                    </div>
+                    <div class="form-group">
+                        <button class="form-control btn btn-primary submit px-3" id="querydsl" style="text-transform: none;">querydsl</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<body>
-    <button id="JPA">
-        JPA
-    </button>
-    <button id="nativeQuery">
-        nativeQuery
-    </button>
-    <button id="JPQL">
-        JPQL
-    </button>
-    <button id="querydsl">
-        querydsl
-    </button>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/popper.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/main.js"></script>
+
 </body>
 </html>
+
