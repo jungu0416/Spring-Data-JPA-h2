@@ -8,7 +8,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "USERS")
-@Data
+@Setter
 public class Users {
 
     @Id
