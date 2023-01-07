@@ -1,6 +1,6 @@
 # JPA
 
-<img width="80%" src="https://user-images.githubusercontent.com/88638457/211123513-816dbd19-ef98-4a22-872b-550cdca18604.png"/>
+<img width="50%" src="https://user-images.githubusercontent.com/88638457/211123513-816dbd19-ef98-4a22-872b-550cdca18604.png"/>
 
 ## Purpose
 * Spring Data JPA 를 사용해보자
