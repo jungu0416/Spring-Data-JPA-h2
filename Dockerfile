@@ -1,5 +1,14 @@
+FROM adoptopenjdk/openjdk8:ubi AS builder
+COPY gradlew .
+COPY gradle gradle
+COPY build.gradle . 
+COPY settings.gradle .
+COPY src src
+RUN chmod +x ./gradlew
+RUN ./gradlew clean bootJar
+
 FROM adoptopenjdk/openjdk8:ubi
-ARG JAR_FILE_PATH=build/libs/demo-0.0.1-SNAPSHOT.jar
-COPY ${JAR_FILE_PATH} demo-0.0.1-SNAPSHOT.jar
+COPY --from=builder build/libs/*.jar app.jar
+
 EXPOSE 8083
-ENTRYPOINT ["java", "-jar", "demo-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","/app.jar"]
